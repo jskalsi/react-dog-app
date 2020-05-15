@@ -1,0 +1,149 @@
+/*
+  Orange shade used:
+    #559632
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+button{
+  font-size: 1rem;
+}
+:focus{
+  outline: none;
+}
+.wrapper{
+  display: grid;
+}
+.wrapper.show{
+  grid-template-columns: 20vw 80vw;
+}
+.wrapper.hidden{
+  grid-template-columns: 100vw;
+}
+
+/* Nav */
+.sideNav{
+  padding: 0 10%;
+  background-color: #559632;
+  color: #fff;
+  text-align: center;
+  z-index: 9999;
+}
+.sideNav.show{
+  display: block;
+  grid-column: 1/2;
+}
+.sideNav.hidden{
+  display: none;
+}
+.sideNav>h2{
+  font-weight: normal;
+}
+form{
+  margin-bottom: 25px;
+}
+form input {
+  width: 80%;
+  background: #7AB759;
+  color: #fff;
+  border: 0;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+::placeholder {
+  color: hsla(0,0%,100%,.6);
+}
+ul{
+  padding: 0;
+  list-style: none;
+}
+ul li button{
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 0;
+  display: block;
+  color: hsla(0,0%,100%,.6);
+  border: 0;
+  border-bottom: 1px solid hsla(0,0%,100%,.1);
+  background-color: #559632;
+}
+ul li button:hover, ul li button.active{
+  color: #fff;
+}
+ul li button.inactive{
+  color: hsla(0,0%,100%,.6);
+}
+
+
+/* Content */
+.content{
+  text-align: center;
+  position: relative;
+}
+.content.show{
+  grid-column: 2/3;
+}
+.content.hidden{
+  grid-column: 1/2;
+}
+.content>button{
+  position: absolute;
+  left: 0.25rem;
+  top: 1.25rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  display: block;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  background-color: #559632;
+  z-index: 9999;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 95%;
+  transition: transform 0.15s;
+}
+
+.column img:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
