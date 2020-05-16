@@ -1,12 +1,6 @@
 import React from 'react';
 
 class Nav extends React.Component {
-	componentDidUpdate(prevProps, prevState) {
-        if(prevProps.dogsMin !== this.props.dogsMin){
-
-        }
-    }
-
     render(){
         return(
 			<nav className={`sideNav ${this.props.navClass}`}>

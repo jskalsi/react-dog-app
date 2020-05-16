@@ -31,10 +31,8 @@ class Home extends React.Component {
     }
     
     componentDidMount() {
-        window.addEventListener('resize', ()=>{
-            this.toggleNavClass(window.innerWidth<=800);
-        });
-        this.toggleNavClass(window.innerWidth<=800);
+        if(window.innerWidth<=800)
+            this.toggleNavClass(true);
         axios.get(`https://dog.ceo/api/breeds/list/all`)
         .then(results=>{
             this.setState({
@@ -73,7 +71,7 @@ class Home extends React.Component {
         return(
             <>
                 {this.state.current &&
-                    <div className="wrapper ">
+                    <div className="wrapper">
                         <Nav {...navProps}/>
                         <Content navClass={this.state.navClass} toggleNavClass={this.toggleNavClass} current={this.state.current}/>
                     </div>
